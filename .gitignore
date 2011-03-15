@@ -4,5 +4,7 @@
 bin/
 parts/
 var/
-develop-eggs
+develop-eggs/
+*.pyc
+*.pyo
 
