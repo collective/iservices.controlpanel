@@ -1,0 +1,7 @@
+Changelog
+=========
+
+0.1 (unreleased yet)
+-------------------
+
++ Initial release, make all the setuptools boilerplate, and create the git repo.
