@@ -30,22 +30,37 @@ class TestCase(ptc.PloneTestCase):
         @classmethod
         def tearDown(cls):
             pass
-    
+
     def afterSetUp(self):
         # Set up the iservices.controlpanel settings registry
         from plone.registry import Registry
         import iservices.controlpanel
-        
+
         self.loginAsPortalOwner()
         self.registry = Registry()
         self.registry.registerInterface(iservices.controlpanel.interfaces.ISettingsSchema)
-        
+
     def test_iservices_controlpanel_view(self):
         # Test the iservices setting control panel view
-        view = getMultiAdapter((self.portal, self.portal.REQUEST), 
+        view = getMultiAdapter((self.portal, self.portal.REQUEST),
                                name="iservices-controlpanel")
         view = view.__of__(self.portal)
-        self.failUnless(view())        
+        self.failUnless(view())
+        
+    def test_iservices_controlpanel_view_protected(self):
+        from AccessControl import Unauthorized
+        self.logout()
+        self.assertRaises(Unauthorized,
+                          self.portal.restrictedTraverse,
+                         '@@iservices-controlpanel')
+    def test_controlpanel_keys(self):
+        # Test that all the keys declared in the Interface are avilable
+        from iservices.controlpanel.interfaces import ISettingsSchema
+        for key_name in ISettingsSchema.names():
+            rkey_name = self.registry.records[
+                'iservices.controlpanel.interfaces.ISettingsSchema.%s'%key_name]
+            self.assertEquals(rkey_name.value, ISettingsSchema[key_name].default)
+	
 
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)
