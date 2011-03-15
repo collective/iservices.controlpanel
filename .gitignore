@@ -1,0 +1,7 @@
+.installed.cfg
+*.egg-info/
+bin/
+parts/
+var/
+
+
