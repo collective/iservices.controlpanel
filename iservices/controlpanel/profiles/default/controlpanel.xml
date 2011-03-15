@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="iservices.controlpanel"
+    purge="False">
+
+    <configlet
+        title="iServices Control Panel"
+        action_id="iservices-controlpanel"
+        appId="iservices.controlpanel"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@iservices-controlpanel"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
+</object>
