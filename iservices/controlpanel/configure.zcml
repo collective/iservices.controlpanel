@@ -23,5 +23,6 @@
         class=".controlpanel.IservicesControlPanel"
         permission="cmf.ManagePortal"
         />
-      
+    <include package=".browser" />
+    
 </configure>

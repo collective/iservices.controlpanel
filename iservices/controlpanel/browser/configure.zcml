@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="iservicestheme.anes">
+
+  <interface
+      interface=".interfaces.IservicesControlPanelLayer"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="iServices Control Panel"
+      />
+  
+  <!-- Viewlets registration -->
+  <include package="plone.app.registry" />
+  <browser:viewlet
+      name="plone.footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.customFooterViewlet"
+      layer=".interfaces.IservicesControlPanelLayer"
+      permission="zope2.View"
+      />
+  <browser:viewlet
+      name="plone.colophon"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.customColophonViewlet"
+      layer=".interfaces.IservicesControlPanelLayer"
+      permission="zope2.View"
+      />
+    <browser:page
+        name="iservices.controlpanel.css"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".customcss.customCssView"
+        permission="zope.Public"
+        layer=".interfaces.IservicesControlPanelLayer"
+        />
+
+</configure>

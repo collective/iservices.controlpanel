@@ -1,0 +1,19 @@
+<div id="portal-colophon"
+     metal:define-macro="colophon"
+     i18n:domain="plone">
+<metal:slot define-slot="colophon" />
+<div class="colophonWrapper" 
+     tal:define="custom_colophon_enable view/settings/custom_colophon_enable">
+<ul tal:condition="not: custom_colophon_enable">
+  <li>
+    <a href="http://plone.org"
+       title="This site was built using the Plone Open Source CMS/WCM."
+       i18n:attributes="title title_built_with_plone;"
+       i18n:translate="label_powered_by_plone">
+      Powered by Plone &amp; Python</a>
+  </li>
+</ul>
+<div tal:replace="view/settings/colophon_text" tal:condition="custom_colophon_enable"></div>
+</ul>
+</div>
+</div>

@@ -41,7 +41,7 @@ class ISettingsSchema(Interface):
                     default=False,
                     required=False
                     )
-    additional_footer_text = SourceText(
+    footer_text = SourceText(
                     title=_(u'Text - Additional advert area'),
                     description=_(u'HTML text that will appear in the Additional advert area'),
                     default= _(u"The Plone CMS/WSM is copyrighted by the Plone Foundation and Friends."
