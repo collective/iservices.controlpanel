@@ -1,6 +1,7 @@
 .installed.cfg
 .mr.developer.cfg
 *.egg-info/
+eggs/
 bin/
 parts/
 var/
