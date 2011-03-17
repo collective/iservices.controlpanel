@@ -5,6 +5,7 @@ eggs/
 bin/
 parts/
 var/
+dist/
 develop-eggs/
 *.pyc
 *.pyo

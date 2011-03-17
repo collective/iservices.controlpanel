@@ -1,6 +1,11 @@
 Changelog
 =========
+0.3.1 - March 16th, 2011
+----------------------
+- Rename README.rst -> README.txt
+
 0.3 - March 16th, 2011
+----------------------
 
 - Add tests for the custom css view and fix different problems around. 
 
