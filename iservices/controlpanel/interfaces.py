@@ -49,18 +49,18 @@ class ISettingsSchema(Interface):
                                ),
                     required=False
                     )
-    foreground_color = TextLine(
-                    title=_(u"Background color of the site"),
-                    description=_(u", use the HTML/CSS notation. The default is #205C90"),
-                    default=u'#205C90',
-                    required=False
-                    )
     enable_color_switch = Bool (
                     title=_(u'Enable changing plone colors'),
                     description=_(u"Enabling this option and defining the colors below, allows you "
                     u"to do a very basic plone theming for free. It allows you to change the most "
                     "two most prominent colors of the default Plone 4 theme(sunburst)"),
                     default=False,
+                    required=False
+                    )
+    background_color = TextLine(
+                    title=_(u"Background color of the site"),
+                    description=_(u", use the HTML/CSS notation. The default is #205C90"),
+                    default=u'#205C90',
                     required=False
                     )
     strong_color = TextLine(

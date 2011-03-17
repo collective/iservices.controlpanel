@@ -26,11 +26,10 @@
       permission="zope2.View"
       />
     <browser:page
-        name="iservices.controlpanel.css"
+        name="iservices_controlpanel.css"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".customcss.customCssView"
         permission="zope.Public"
-        layer=".interfaces.IservicesControlPanelLayer"
         />
 
 </configure>

@@ -9,7 +9,7 @@ import::
 
 All settings are available using standar Python dot notation. Example::
 
-    >>> settings.foreground_color
+    >>> settings.background_color
     u'#205C90'
 
 If you access an unknown name, you will get an AttributeError:
@@ -21,10 +21,10 @@ If you access an unknown name, you will get an AttributeError:
     
 Also, using getattr(), even on an existing key name, does not make it:
 
-    >>> getattr(settings,foreground_color)
+    >>> getattr(settings,background_color)
     Traceback (most recent call last):
     ...
-    NameError: name 'foreground_color' is not defined
+    NameError: name 'background_color' is not defined
 
 Sometimes, settings on the control panel will have empty values. It is suggested
 that, when this happens, the funcionality related to this particular setting
